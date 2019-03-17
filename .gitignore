@@ -398,3 +398,5 @@ tags
 .history
 
 # End of https://www.gitignore.io/api/vim,node,emacs,python,pycharm+all,sublimetext,visualstudiocode
+
+client-sample.py
