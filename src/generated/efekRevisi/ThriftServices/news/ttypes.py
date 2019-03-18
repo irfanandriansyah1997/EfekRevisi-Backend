@@ -27,7 +27,7 @@ class News(object):
 
     thrift_spec = (
         None,  # 0
-        (1, TType.I64, 'newsID', None, None, ),  # 1
+        (1, TType.I32, 'newsID', None, None, ),  # 1
         (2, TType.STRING, 'title', 'UTF8', None, ),  # 2
         (3, TType.STRING, 'thumbnail', 'UTF8', None, ),  # 3
         (4, TType.STRING, 'date', 'UTF8', None, ),  # 4
@@ -51,8 +51,8 @@ class News(object):
             if ftype == TType.STOP:
                 break
             if fid == 1:
-                if ftype == TType.I64:
-                    self.newsID = iprot.readI64()
+                if ftype == TType.I32:
+                    self.newsID = iprot.readI32()
                 else:
                     iprot.skip(ftype)
             elif fid == 2:
@@ -86,8 +86,8 @@ class News(object):
             return
         oprot.writeStructBegin('News')
         if self.newsID is not None:
-            oprot.writeFieldBegin('newsID', TType.I64, 1)
-            oprot.writeI64(self.newsID)
+            oprot.writeFieldBegin('newsID', TType.I32, 1)
+            oprot.writeI32(self.newsID)
             oprot.writeFieldEnd()
         if self.title is not None:
             oprot.writeFieldBegin('title', TType.STRING, 2)
