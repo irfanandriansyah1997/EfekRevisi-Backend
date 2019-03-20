@@ -5,6 +5,8 @@ PYTEST=py.test
 all: env testing
 
 env:
+	cp ./etc/git-hooks/pre-commit ./.git/hooks/pre-commit
+	chmod +x ./.git/hooks/pre-commit
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 
