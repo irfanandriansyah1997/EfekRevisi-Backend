@@ -1,5 +1,6 @@
 import os
 from configparser import ConfigParser
+from configparser import NoOptionError
 
 
 def get_config(files='config.conf'):
@@ -14,5 +15,5 @@ def get_config(files='config.conf'):
             files
         ))
         return config
-    except Exception as e:
-        raise Exception(e)
+    except NoOptionError as e:  # pragma: no cover
+        raise NoOptionError(e)

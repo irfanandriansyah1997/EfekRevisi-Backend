@@ -1,5 +1,5 @@
-from src.generated.efekRevisi.ThriftServices.news import NewsService
-from src.generated.efekRevisi.ThriftServices.news.ttypes import News, NewsList
+from generated.efekRevisi.ThriftServices.news import NewsService
+from generated.efekRevisi.ThriftServices.news.ttypes import News, NewsList
 
 
 class NewsHandler:
